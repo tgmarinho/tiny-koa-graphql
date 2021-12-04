@@ -12,9 +12,9 @@ yarn dev
 # Endpoints
 
 ```
-/graphql - GraphiQL"
-/playground - GraphQL Playground"
-/status - Status server"
+/graphql - GraphiQL
+/playground - GraphQL Playground
+/status - Status server
 ```
 
 > 🚀 server running at http://localhost:5566 💻
