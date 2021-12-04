@@ -1,9 +1,10 @@
 # tiny-koa-graphql
 
-Tiny koa GraphQL implementation using Webpack
+Tiny koa GraphQL implementation using Tsup
 
 ## How to run
 
 ```
-yarn start
+yarn build 
+yarn dev
 ```
