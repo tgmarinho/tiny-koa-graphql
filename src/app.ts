@@ -7,23 +7,22 @@ import { koaPlayground } from "graphql-playground-middleware";
 import graphqlHttp from "koa-graphql";
 import { config } from "./config";
 import { schema } from "./schema/schema";
-
 const app = new Koa();
 const router = new Router();
 
 app.use(bodyParser());
 app.use(convert(cors({ maxAge: 86400, credentials: true })));
 
-router.get('/', ctx => {
+router.get("/", (ctx) => {
   const info = [
-    '/graphql - GraphiQL',
-    '/playground - GraphQL Playground',
-    '/status - Status server'
-  ]
+    "/graphql - GraphiQL",
+    "/playground - GraphQL Playground",
+    "/status - Status server",
+  ];
 
   ctx.status = 200;
-  ctx.body = info.join('\n');
-})
+  ctx.body = info.join("\n");
+});
 router.get("/status", (ctx) => {
   ctx.status = 200;
   ctx.body = "running";
@@ -35,9 +34,8 @@ router.all(
     endpoint: "/graphql",
   })
 );
-
 const appGraphQL = convert(
-  graphqlHttp(async (request: Request, ctx: Response, koaContext) => {
+  graphqlHttp(async (request: any, ctx: any, koaContext) => {
     return {
       graphiql: config.NODE_ENV !== "production",
       schema,
